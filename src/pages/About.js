@@ -61,13 +61,13 @@ const About = () => {
             img="/assets/feature1.png"
           />
           <Card
-            heading="2014"
+            heading="2018"
             para="addressing the pressing challenges
           faced by "
             img="/assets/feature2.png"
           />
           <Card
-            heading="2014"
+            heading="2021"
             para="addressing the pressing challenges
         faced by"
             img="/assets/feature3.png"

@@ -539,6 +539,7 @@ span {
   justify-content: center;
   align-items: center;
   margin-top: 60px;
+  margin-bottom: 120px;
 }
 
 .volunteer h1 {
@@ -558,7 +559,7 @@ span {
 
 footer {
   width: 100%;
-  margin-top: 120px;
+
   background-color: var(--blue);
   height: max-content;
   padding-bottom: 30px;
