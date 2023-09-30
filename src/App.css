@@ -673,6 +673,9 @@ h2.links {
 
   padding: 0;
 }
+.gal-container div {
+  display: flex;
+}
 .gal-container img {
   margin: 2px;
   width: 80px;
