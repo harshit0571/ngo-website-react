@@ -29,7 +29,7 @@ const About = () => {
           <span>MEET OUR </span>
           <span style={{ color: "var(--red)" }}>FOUNDER</span>
         </p>
-        <div className="w-full flex flex-col md:flex-row justify-center items-center">
+        <div className="w-full mb-10 flex flex-col md:flex-row justify-center items-center">
           <div class="cards">
             <div class="help-img">
               <img src="assets/about2.jpeg" />
@@ -46,7 +46,10 @@ const About = () => {
         </div>
       </div>
 
-      <div className="w-full bg-[var(--red)] py-10 flex-col justify-around items-center">
+      <div
+        className="w-full bg-[var(--red)] py-10 flex-col justify-around items-center"
+        id="mile"
+      >
         <h1 className="text-center text-2xl tracking-tighter font-bold text-white">
           OUR MILESTONES
         </h1>

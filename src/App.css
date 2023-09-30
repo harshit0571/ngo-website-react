@@ -769,6 +769,9 @@ li {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(/public/assets/about-banner.jpg);
 }
+#mile {
+  background-image: url(/public/assets/back.png);
+}
 
 /* responsive */
 
