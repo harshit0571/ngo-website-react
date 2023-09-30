@@ -764,6 +764,12 @@ li {
   cursor: pointer;
 }
 
+/* about us page */
+#about-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/public/assets/about-banner.jpg);
+}
+
 /* responsive */
 
 @media screen and (max-width: 1024px) {
