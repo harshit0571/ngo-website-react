@@ -5,7 +5,7 @@ import EventsCards from "../components/EventsCards";
 const Events = () => {
   return (
     <div className="w-full mb-[120px]">
-      <div className="w-full h-20 bg-[var(--blue)] flex items-center justify-center">
+      <div className="w-full h-20 bg-red-500 flex items-center justify-center">
         <h1 className="text-white font-sans text-5xl">Events</h1>
       </div>
       <div className="w-full h-[400px] flex items-center justify-center relative">

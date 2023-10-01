@@ -6,9 +6,9 @@ import DonationCard from "../components/DonationCard";
 const Causes = () => {
   const active = "bg-white text-red-500";
   const inactive = "bg-red-500 text-white";
-  const [One, setOne] = useState(active);
+  const [One, setOne] = useState(inactive);
   const [Two, setTwo] = useState(inactive);
-  const [Three, setThree] = useState(inactive);
+  const [Three, setThree] = useState(active);
   return (
     <div className="mb-[120px] flex flex-col items-center">
       <div
