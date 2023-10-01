@@ -29,6 +29,10 @@ const Events = () => {
           </div>
         </div>
       </div>
+      <h1 className="text-center text-5xl mt-5">
+        Upcoming{" "}
+        <span className="text-red-500 text-center text-5xl mt-5">Events</span>
+      </h1>
       <EventsCards />
     </div>
   );
