@@ -7,7 +7,7 @@ const About = () => {
     <div className="flex flex-col">
       <div
         className="flex justify-center items-start w-full h-[320px] bg-cover bg-no-repeat bg-right md:bg-center p-5"
-        id="causes-banner"
+        id="about-banner"
       >
         <div className="flex flex-col w-[90%] md:w-[50%] h-full justify-around text-center text-gray-100">
           <h1 className="text-6xl tracking-tighter  font-sans">About Us</h1>

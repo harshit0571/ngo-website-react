@@ -45,15 +45,15 @@ const Causes = () => {
               <button
                 className={
                   "border-0 py-2 px-6 focus:outline-none hover:bg-white hover:text-red-500 rounded-none text-lg " +
-                  One
+                  Three
                 }
                 onClick={() => {
-                  setOne(active);
+                  setOne(inactive);
                   setTwo(inactive);
-                  setThree(inactive);
+                  setThree(active);
                 }}
               >
-                Contributions
+                Donations
               </button>
               <button
                 className={
@@ -71,15 +71,15 @@ const Causes = () => {
               <button
                 className={
                   "border-0 py-2 px-6 focus:outline-none hover:bg-white hover:text-red-500 rounded-none text-lg " +
-                  Three
+                  One
                 }
                 onClick={() => {
-                  setOne(inactive);
+                  setOne(active);
                   setTwo(inactive);
-                  setThree(active);
+                  setThree(inactive);
                 }}
               >
-                Donations
+                Contributions
               </button>
             </div>
 

@@ -778,6 +778,25 @@ li {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(/public/assets/causes-banner.jpg);
 }
+
+#event1 {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url(/public/assets/causes-banner.jpg);
+}
+#event2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/public/assets/causes-banner.jpg);
+}
+#event3 {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url(/public/assets/causes-banner.jpg);
+}
 /* responsive */
 
 @media screen and (max-width: 1024px) {
