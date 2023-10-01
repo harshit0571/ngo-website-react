@@ -21,7 +21,7 @@ const Contact = () => {
             Contact Us
           </h2>
           <p class="leading-relaxed mb-5 text-gray-600">
-            Post-ironic portland shabby chic echo park, banjo fashion axe
+            Send your query to through email.
           </p>
           <div class="relative mb-4">
             <label for="email" class="leading-7 text-sm text-gray-600">
@@ -45,7 +45,7 @@ const Contact = () => {
             ></textarea>
           </div>
           <button class="text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">
-            Button
+            Send
           </button>
           <p class="text-xs text-gray-500 mt-3">
             Chicharrones blog helvetica normcore iceland tousled brook viral
