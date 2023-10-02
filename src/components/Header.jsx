@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [Toggle, setToggle] = useState("");
+  const path = window.location.href;
+  useEffect(() => {
+    console.log(path);
+    console.log("d");
+  }, []);
 
   return (
     <header>

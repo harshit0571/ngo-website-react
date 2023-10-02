@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 
 const Contact = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <section class="text-gray-600 body-font relative">
       <div class="absolute inset-0 bg-gray-300">
