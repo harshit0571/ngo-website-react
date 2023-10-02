@@ -11,7 +11,7 @@ const EventsCards = () => {
               class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
             >
               <h2 class="tracking-widest text-xs title-font font-medium text-gray-300 mb-1">
-                CATEGORY
+                Banglore
               </h2>
               <h1 class="title-font sm:text-2xl text-xl font-medium text-white mb-3">
                 Ennui Snackwave Thundercats
@@ -21,7 +21,7 @@ const EventsCards = () => {
                 microdosing tousled waistcoat.
               </p>
               <a class="text-indigo-500 inline-flex items-center">
-                Learn More
+                Attend
                 <svg
                   class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
@@ -74,7 +74,7 @@ const EventsCards = () => {
               class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
             >
               <h2 class="tracking-widest text-xs title-font font-medium text-gray-300 mb-1">
-                CATEGORY
+                Mumbai
               </h2>
               <h1 class="title-font sm:text-2xl text-xl font-medium text-white mb-3">
                 Ennui Snackwave Thundercats
@@ -84,7 +84,7 @@ const EventsCards = () => {
                 microdosing tousled waistcoat.
               </p>
               <a class="text-indigo-500 inline-flex items-center">
-                Learn More
+                Attend
                 <svg
                   class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ const EventsCards = () => {
               class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
             >
               <h2 class="tracking-widest text-xs title-font font-medium text-gray-300 mb-1">
-                CATEGORY
+                Chennai
               </h2>
               <h1 class="title-font sm:text-2xl text-xl font-medium text-white mb-3">
                 Ennui Snackwave Thundercats
@@ -147,7 +147,7 @@ const EventsCards = () => {
                 microdosing tousled waistcoat.
               </p>
               <a class="text-indigo-500 inline-flex items-center">
-                Learn More
+                Attend
                 <svg
                   class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
