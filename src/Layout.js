@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,10 +9,13 @@ const Layout = ({ User, setUser }) => {
   const { pathname } = useLocation();
   // Automatically scrolls to top whenever pathname changes
   console.log(User, "layout");
+  useLayoutEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <div>
       <HeaderNav />
-      <Header User={User} />
+      <Header User={User} path={pathname} />
       <Outlet User={User} setUser={setUser} />
       <Footer />
     </div>

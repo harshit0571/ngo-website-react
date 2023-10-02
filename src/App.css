@@ -803,7 +803,7 @@ li {
   .links {
     display: flex;
     justify-content: space-evenly;
-    margin-right: 5%;
+    margin-right: 3%;
   }
 
   header {
@@ -844,7 +844,7 @@ li {
     font-weight: 1000;
   }
   .header-links {
-    width: 50%;
+    width: 60%;
   }
   .header-links ul {
     display: flex;

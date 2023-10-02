@@ -6,8 +6,9 @@ const SignUp = ({ setUser }) => {
   const [country, setcountry] = useState("");
   return (
     <div className="flex flex-col mb-10 items-center justify-center mt-10">
-      <div className="flex flex-col w-[98%] md:w-[50%] xl:w-[40%] pb-5 justify-between items-center border-2 lg:p-4 border-black gap-10">
+      <div className="flex flex-col w-[98%] md:w-[50%] xl:w-[40%] pb-5 justify-between items-center border-2 lg:p-4 pt-7 border-black gap-10">
         <div className="flex flex-col w-full items-center gap-5">
+          <h1 className="text-red-500 font-bold text-3xl">LOGIN</h1>
           <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
             Name:{" "}
             <input

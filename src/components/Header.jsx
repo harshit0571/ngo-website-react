@@ -46,58 +46,49 @@ const Header = ({ path, User }) => {
         <ul className="scroll-auto">
           <Link to="/" className="w-[100%] lg:w-auto">
             <li>
-              <a href="#" style={{ color: path == "/" ? "red" : "black" }}>
+              <a href="#" style={{ color: path == "/" ? "red" : "" }}>
                 Home
               </a>
             </li>
           </Link>
           <Link to="/about" className="w-[100%] lg:w-auto">
             <li>
-              <a href="#" style={{ color: path == "/about" ? "red" : "black" }}>
+              <a href="#" style={{ color: path == "/about" ? "red" : "" }}>
                 About
               </a>
             </li>
           </Link>
           <Link to="/causes" className="w-[100%] lg:w-auto">
             <li>
-              <a
-                href="#"
-                style={{ color: path == "/causes" ? "red" : "black" }}
-              >
+              <a href="#" style={{ color: path == "/causes" ? "red" : "" }}>
                 Causes
               </a>
             </li>
           </Link>
           <Link to="/events" className="w-[100%] lg:w-auto">
             <li>
-              <a
-                href="#"
-                style={{ color: path == "/events" ? "red" : "black" }}
-              >
+              <a href="#" style={{ color: path == "/events" ? "red" : "" }}>
                 Event
               </a>
             </li>
           </Link>
           <Link to="/news" className="w-[100%] lg:w-auto">
             <li>
-              <a href="#" style={{ color: path == "/news" ? "red" : "black" }}>
+              <a href="#" style={{ color: path == "/news" ? "red" : "" }}>
                 News
               </a>
             </li>
           </Link>
           <Link to="contact" className="w-[100%] lg:w-auto">
             <li>
-              <a
-                href="#"
-                style={{ color: path == "/contact" ? "red" : "black" }}
-              >
+              <a href="#" style={{ color: path == "/contact" ? "red" : "" }}>
                 Contact
               </a>
             </li>
           </Link>
           <Link to="login" className="w-[100%] lg:w-auto">
             <li>
-              <a href="#" style={{ color: path == "/login" ? "red" : "black" }}>
+              <a href="#" style={{ color: path == "/login" ? "red" : "" }}>
                 <i class="fa fa-user" aria-hidden="true"></i>
                 {User.name ? User.name : " Sign in"}
               </a>

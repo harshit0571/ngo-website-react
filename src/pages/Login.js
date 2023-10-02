@@ -5,7 +5,7 @@ import SignUp from "../components/SignUp";
 
 const Login = ({ User, setUser }) => {
   return (
-    <div className="flex flex-col mb-[120px]">
+    <div className="flex flex-col mb-20">
       {User.name ? (
         <LoggedIn setUser={setUser} user={User} />
       ) : (
