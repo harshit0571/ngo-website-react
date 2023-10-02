@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [Links, setLinks] = useState(false);
+  const [Gallery, setGallery] = useState(false);
+  const [Contact, setContact] = useState(false);
   return (
     <footer>
       <section class="contact">
@@ -36,39 +40,53 @@ const Footer = () => {
           </div>
 
           <div class="footer-links">
-            <h2 class="links">QUICK LINKS</h2>
+            <h2
+              class="links"
+              onClick={() => {
+                setLinks(!Links);
+              }}
+            >
+              QUICK LINKS
+            </h2>
             <br />
-            <ul class="footer-links-ul">
+            <ul class={"footer-links-ul " + (Links && "active-links")}>
               <li>
                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                Home
+                <Link to="home">Home</Link>
               </li>
               <li>
                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                About
+                <Link to="about">About</Link>
               </li>
               <li>
                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                Causes
+                <Link to="causes">Causes</Link>
               </li>
               <li>
                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                Events
+                <Link to="event">Events</Link>
               </li>
               <li>
                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                News
+                <Link to="news">News</Link>
               </li>
               <li>
                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                Content
+                <Link to="contact">Contact</Link>
               </li>
             </ul>
           </div>
 
           <div class="gallery">
-            <h2 class="gal-btn">GALLERY</h2>
-            <div class="gal-container">
+            <h2
+              class="gal-btn"
+              onClick={() => {
+                setGallery(!Gallery);
+              }}
+            >
+              GALLERY
+            </h2>
+            <div class={"gal-container " + (Gallery && "gal-container-active")}>
               <div>
                 <img src="assets/ga1.png" />
                 <img src="assets/ga2.png" />
@@ -85,9 +103,20 @@ const Footer = () => {
           </div>
 
           <div class="contact-footer">
-            <h2 class="contact-btn">CONTACT US</h2>
+            <h2
+              class="contact-btn"
+              onClick={() => {
+                setContact(!Contact);
+              }}
+            >
+              CONTACT US
+            </h2>
 
-            <div class="contact-container">
+            <div
+              class={
+                "contact-container " + (Contact && "contact-container-active")
+              }
+            >
               <div class="contact-card">
                 <div class="contact-heading">
                   <div class="location">

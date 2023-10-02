@@ -35,38 +35,44 @@ const Header = () => {
           ></i>
         )}
       </div>
-      <div class={"header-links " + Toggle}>
+      <div
+        class={"header-links " + Toggle}
+        onClick={() => {
+          setToggle("");
+        }}
+      >
         <ul>
-          <li>
-            <Link to="/">
+          <Link to="/" className="w-[100%] sm:w-auto">
+            <li>
               <a href="#">Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link to="/about">
+            </li>
+          </Link>
+          <Link to="/about" className="w-[100%] sm:w-auto">
+            <li>
               <a href="#">About</a>
-            </Link>
-          </li>
-          <li>
-            <Link to="/causes">
+            </li>
+          </Link>
+          <Link to="/causes" className="w-[100%] sm:w-auto">
+            <li>
               <a href="#">Causes</a>
-            </Link>
-          </li>
-          <li>
-            <Link to="/events">
+            </li>
+          </Link>
+          <Link to="/events" className="w-[100%] sm:w-auto">
+            <li>
               <a href="#">Event</a>
-            </Link>
-          </li>
-          <li>
-            <Link to="/news">
+            </li>
+          </Link>
+
+          <Link to="/news" className="w-[100%] sm:w-auto">
+            <li>
               <a href="#">News</a>
-            </Link>
-          </li>
-          <li>
-            <Link to="contact">
+            </li>
+          </Link>
+          <Link to="contact" className="w-[100%] sm:w-auto">
+            <li>
               <a href="#">Contact</a>
-            </Link>
-          </li>
+            </li>
+          </Link>
         </ul>
       </div>
     </header>

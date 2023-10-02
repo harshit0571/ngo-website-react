@@ -958,7 +958,7 @@ li {
   }
   .active {
     display: block;
-    margin-top: 10px;
+
     width: 100%;
     height: 100vh;
     background-color: var(--grey);
@@ -973,7 +973,10 @@ li {
     gap: 10px;
 
     flex-direction: column;
-    padding-top: 10px;
+
+    width: 100%;
+  }
+  .header-links Link {
     width: 100%;
   }
   .header-links li {
