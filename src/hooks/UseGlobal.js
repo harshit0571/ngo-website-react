@@ -1,14 +1,23 @@
 import React from "react";
 
 const UseGlobal = () => {
-  let User = null;
-  const changeUser = (user) => {
+  let User = {
+    name: "harshit",
+    username: "harshit0571",
+    country: "india",
+    status: "active",
+  };
+  const updateUser = (user) => {
     User = user;
+    return User;
   };
   const getUser = () => {
     return User;
   };
-  return { getUser, changeUser };
+  const check = () => {
+    console.log(User);
+  };
+  return { getUser, updateUser, check };
 };
 
 export default UseGlobal;

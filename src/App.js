@@ -8,6 +8,7 @@ import Causes from "./pages/Causes";
 import Contact from "./pages/Contact";
 import News from "./pages/News";
 import Events from "./pages/Event";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="news" element={<News />} />
           <Route path="events" element={<Events />} />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>

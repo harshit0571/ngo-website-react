@@ -5,9 +5,8 @@ import UseGlobal from "../hooks/UseGlobal";
 const Header = ({ path, user }) => {
   const [Toggle, setToggle] = useState("");
   const active = "text-red-500 underline";
-
-  const { getUser, changeUser } = UseGlobal();
-
+  const [User, setUser] = useState(user);
+  console.log(User, "hello");
   return (
     <header>
       <div class="logo-container">
@@ -101,7 +100,7 @@ const Header = ({ path, user }) => {
             <li>
               <a href="#" style={{ color: path == "/login" ? "red" : "black" }}>
                 <i class="fa fa-user" aria-hidden="true"></i>
-                {getUser() ? getUser() : " Sign in"}
+                {User.name ? User.name : " Sign in"}
               </a>
             </li>
           </Link>
