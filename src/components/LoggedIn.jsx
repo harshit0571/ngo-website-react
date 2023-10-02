@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import UseGlobal from "../hooks/UseGlobal";
 
-const LoggedIn = ({ setUser }) => {
+const LoggedIn = ({ user, setUser }) => {
   const { getUser, updateUser, check } = UseGlobal();
-  const user = getUser();
   const [name, setname] = useState(user.name);
   const [username, setusername] = useState(user.username);
   const [country, setcountry] = useState(user.country);
