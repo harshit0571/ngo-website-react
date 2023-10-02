@@ -5,17 +5,14 @@ import Footer from "./components/Footer";
 import HeaderNav from "./components/HeaderNav";
 import UseGlobal from "./hooks/UseGlobal";
 
-const Layout = () => {
+const Layout = ({ User, setUser }) => {
   const { pathname } = useLocation();
-
-  const { getUser } = UseGlobal();
-  const [User, setUser] = useState(getUser());
   // Automatically scrolls to top whenever pathname changes
-
+  console.log(User, "layout");
   return (
     <div>
       <HeaderNav />
-      <Header user={User} />
+      <Header User={User} />
       <Outlet User={User} setUser={setUser} />
       <Footer />
     </div>

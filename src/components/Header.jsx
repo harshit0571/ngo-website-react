@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import UseGlobal from "../hooks/UseGlobal";
 
-const Header = ({ path, user }) => {
+const Header = ({ path, User }) => {
   const [Toggle, setToggle] = useState("");
   const active = "text-red-500 underline";
-  const [User, setUser] = useState(user);
   console.log(User, "hello");
   return (
     <header>
