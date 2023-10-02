@@ -58,7 +58,8 @@ const LoggedIn = ({ setUser }) => {
         <div className="flex flex-col gap-5">
           <button
             onClick={() => {
-              check();
+              setUser({ name: name, country: country, username: username });
+              alert("changes updated :)");
             }}
           >
             Update
