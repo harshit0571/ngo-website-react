@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import UseGlobal from "../hooks/UseGlobal";
 
 const Header = ({ path, user }) => {
   const [Toggle, setToggle] = useState("");
   const active = "text-red-500 underline";
+
+  const { getUser, changeUser } = UseGlobal();
+
   return (
     <header>
       <div class="logo-container">
@@ -93,14 +97,11 @@ const Header = ({ path, user }) => {
               </a>
             </li>
           </Link>
-          <Link to="contact" className="w-[100%] lg:w-auto">
+          <Link to="login" className="w-[100%] lg:w-auto">
             <li>
-              <a
-                href="#"
-                style={{ color: path == "/contact" ? "red" : "black" }}
-              >
+              <a href="#" style={{ color: path == "/login" ? "red" : "black" }}>
                 <i class="fa fa-user" aria-hidden="true"></i>
-                {user}
+                {getUser() ? getUser() : " Sign in"}
               </a>
             </li>
           </Link>

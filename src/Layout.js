@@ -16,7 +16,7 @@ const Layout = () => {
   return (
     <div>
       <HeaderNav />
-      <Header path={pathname} user={" log-in"} />
+      <Header path={pathname} />
       <Outlet />
       <Footer />
     </div>
