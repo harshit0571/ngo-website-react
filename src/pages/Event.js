@@ -8,7 +8,7 @@ const Events = () => {
       <div className="w-full h-20 bg-red-500 flex items-center justify-center">
         <h1 className="text-white font-sans text-5xl">Events</h1>
       </div>
-      <div className="w-full h-[400px] flex items-center justify-center relative">
+      <div className="w-full h-[400px] bg-gray-200 flex items-center justify-center relative">
         <iframe
           width="100%"
           height="100%"
