@@ -3,9 +3,6 @@ import Card from "../components/Card";
 import EventsCards from "../components/EventsCards";
 
 const Events = () => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
   return (
     <div className="w-full mb-[120px]">
       <div className="w-full h-20 bg-red-500 flex items-center justify-center">

@@ -1,12 +1,9 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import "../App.css";
 import Card from "../components/Card";
 import AboutCard from "../components/AboutCard";
 
 const About = () => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
   return (
     <div className="flex flex-col">
       <div

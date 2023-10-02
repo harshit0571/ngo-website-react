@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ path, user }) => {
   const [Toggle, setToggle] = useState("");
-  const path = window.location.href;
-  useEffect(() => {
-    console.log(path);
-    console.log("d");
-  }, []);
-
+  const active = "text-red-500 underline";
   return (
     <header>
       <div class="logo-container">
@@ -46,36 +41,67 @@ const Header = () => {
           setToggle("");
         }}
       >
-        <ul>
-          <Link to="/" className="w-[100%] sm:w-auto">
+        <ul className="scroll-auto">
+          <Link to="/" className="w-[100%] lg:w-auto">
             <li>
-              <a href="#">Home</a>
+              <a href="#" style={{ color: path == "/" ? "red" : "black" }}>
+                Home
+              </a>
             </li>
           </Link>
-          <Link to="/about" className="w-[100%] sm:w-auto">
+          <Link to="/about" className="w-[100%] lg:w-auto">
             <li>
-              <a href="#">About</a>
+              <a href="#" style={{ color: path == "/about" ? "red" : "black" }}>
+                About
+              </a>
             </li>
           </Link>
-          <Link to="/causes" className="w-[100%] sm:w-auto">
+          <Link to="/causes" className="w-[100%] lg:w-auto">
             <li>
-              <a href="#">Causes</a>
+              <a
+                href="#"
+                style={{ color: path == "/causes" ? "red" : "black" }}
+              >
+                Causes
+              </a>
             </li>
           </Link>
-          <Link to="/events" className="w-[100%] sm:w-auto">
+          <Link to="/events" className="w-[100%] lg:w-auto">
             <li>
-              <a href="#">Event</a>
+              <a
+                href="#"
+                style={{ color: path == "/events" ? "red" : "black" }}
+              >
+                Event
+              </a>
             </li>
           </Link>
-
-          <Link to="/news" className="w-[100%] sm:w-auto">
+          <Link to="/news" className="w-[100%] lg:w-auto">
             <li>
-              <a href="#">News</a>
+              <a href="#" style={{ color: path == "/news" ? "red" : "black" }}>
+                News
+              </a>
             </li>
           </Link>
-          <Link to="contact" className="w-[100%] sm:w-auto">
+          <Link to="contact" className="w-[100%] lg:w-auto">
             <li>
-              <a href="#">Contact</a>
+              <a
+                href="#"
+                style={{ color: path == "/contact" ? "red" : "black" }}
+              >
+                Contact
+              </a>
+            </li>
+          </Link>
+          <Link to="contact" className="w-[100%] lg:w-auto">
+            <li>
+              <a
+                href="#"
+                style={{ color: path == "/contact" ? "red" : "black" }}
+              >
+                <i class="fa fa-user" aria-hidden="true"></i>
+                {user}
+              </a>
             </li>
           </Link>
         </ul>

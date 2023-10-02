@@ -9,9 +9,7 @@ const Causes = () => {
   const [One, setOne] = useState(inactive);
   const [Two, setTwo] = useState(inactive);
   const [Three, setThree] = useState(active);
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
+
   return (
     <div className="mb-[120px] flex flex-col items-center">
       <div

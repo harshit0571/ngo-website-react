@@ -2,9 +2,6 @@ import React, { useLayoutEffect } from "react";
 import NewsCard from "../components/NewsCard";
 
 const News = () => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
   return (
     <div className="flex flex-col mb-[120px]">
       <div

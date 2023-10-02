@@ -960,7 +960,8 @@ li {
     display: block;
 
     width: 100%;
-    height: 100vh;
+    height: 90vh;
+    overflow: auto;
     background-color: var(--grey);
     color: #ffff;
     transition: background-color 1s ease-in-out;
