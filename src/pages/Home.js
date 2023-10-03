@@ -1,4 +1,5 @@
 import React, { useLayoutEffect } from "react";
+import DonationCard from "../components/DonationCard";
 
 const Home = () => {
   return (

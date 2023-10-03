@@ -52,7 +52,7 @@ const Footer = () => {
             <ul class={"footer-links-ul " + (Links && "active-links")}>
               <li>
                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                <Link to="home">Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>

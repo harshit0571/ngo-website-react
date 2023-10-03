@@ -52,6 +52,7 @@ const DonationCard = () => {
         className="border-0 bg-red-500 py-5 px-10 focus:outline-none hover:bg-red-200 hover:text-red-500 rounded text-lg "
         onClick={() => {
           alert("thanks for donating :)");
+          setDonation("");
         }}
       >
         Donate

@@ -14,10 +14,7 @@ const UseGlobal = () => {
   const getUser = () => {
     return User;
   };
-  const check = () => {
-    console.log(User);
-  };
-  return { getUser, updateUser, check };
+  return { getUser, updateUser };
 };
 
 export default UseGlobal;
