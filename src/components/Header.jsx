@@ -4,7 +4,6 @@ import UseGlobal from "../hooks/UseGlobal";
 
 const Header = ({ path, User }) => {
   const [Toggle, setToggle] = useState("");
-  const active = "text-red-500 underline";
   console.log(User, "hello");
   return (
     <header>

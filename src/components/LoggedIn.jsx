@@ -14,7 +14,7 @@ const LoggedIn = ({ user, setUser }) => {
         {name}
       </h1>
 
-      <div className="flex flex-col w-[98%] md:w-[50%] xl:w-[40%] pb-5 justify-between items-center border-2 lg:p-4 border-black gap-10">
+      <div className="flex flex-col w-[98%] md:w-[50%] xl:w-[40%] pb-5 justify-between items-center border-2 lg:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.7)]  gap-10">
         <div className="flex flex-col w-full items-center gap-5">
           <img
             src="assets/user.jpg"
@@ -29,6 +29,7 @@ const LoggedIn = ({ user, setUser }) => {
               onChange={(e) => {
                 setusername(e.target.value);
               }}
+              required
             />
           </div>
           <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
@@ -40,6 +41,7 @@ const LoggedIn = ({ user, setUser }) => {
               onChange={(e) => {
                 setname(e.target.value);
               }}
+              required
             />
           </div>
           <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
@@ -51,6 +53,7 @@ const LoggedIn = ({ user, setUser }) => {
               onChange={(e) => {
                 setcountry(e.target.value);
               }}
+              required
             />
           </div>
         </div>

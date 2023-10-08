@@ -16,9 +16,19 @@ const Footer = () => {
         <div class="contact-2">
           <div>
             <i class="fa fa-envelope-o" id="mail" aria-hidden="true"></i>
-            <input type="search" placeholder="Enter email" />
+            <input
+              type="search"
+              placeholder="Enter email"
+              className="text-black"
+            />
           </div>
-          <button>Subscribe</button>
+          <button
+            onClick={() => {
+              alert("subscribed!!!");
+            }}
+          >
+            Subscribe
+          </button>
         </div>
       </section>
 
