@@ -60,7 +60,7 @@ const SignUp = ({ setUser }) => {
                 }}
                 className="bg-red-600"
               >
-                Register
+                Create Account
               </button>
             </div>
           </div>
