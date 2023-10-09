@@ -5,6 +5,20 @@ const SignUp = ({ setUser }) => {
   const [username, setusername] = useState("");
   const [country, setcountry] = useState("");
   const [True, setTrue] = useState(true);
+  const Register = () => {
+    if (name == "" || username == "" || country == "") {
+      alert("please fill all details");
+    } else {
+      setUser({ name: name, username: username, country: country });
+    }
+  };
+  const SignIN = () => {
+    if (name == "" || username == "") {
+      alert("please fill all details");
+    } else {
+      setUser({ name: name, username: username });
+    }
+  };
   return (
     <div>
       {True ? (
@@ -47,13 +61,7 @@ const SignUp = ({ setUser }) => {
               </div>
             </div>
             <div className="flex gap-5">
-              <button
-                onClick={() => {
-                  setUser({ name: name, username: username });
-                }}
-              >
-                Log in
-              </button>
+              <button onClick={SignIN}>Log in</button>
               <button
                 onClick={() => {
                   setTrue(!True);
@@ -117,13 +125,7 @@ const SignUp = ({ setUser }) => {
               </div>
             </div>
             <div className="flex flex-col xs:flex-row justify-center items-center gap-5">
-              <button
-                onClick={() => {
-                  setUser({ name: name, username: username, country: country });
-                }}
-              >
-                Register
-              </button>
+              <button onClick={Register}>Register</button>
               <button
                 onClick={() => {
                   setTrue(!True);
