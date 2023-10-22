@@ -1,8 +1,36 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 
 const Contact = () => {
+  const [Email, setEmail] = useState("");
+  const [Message, setMessage] = useState("");
+  const [Time, setTime] = useState(false);
+  const Send = () => {
+    setTime(true);
+    setTimeout(() => {
+      setTime(false);
+    }, 3000);
+  };
+
   return (
     <section class="text-gray-600 body-font relative">
+      {Time ? (
+        <div className="bg-white border-8 border-red-600 w-[300px] h-[500px] z-50 inset-0 absolute m-auto flex flex-col p-4 overflow-y-auto">
+          <h1 className="text-2xl mb-4 text-red-500 font-bold text-center">
+            Thanks for contacting us
+          </h1>
+          <p className="text-center">We will reply to you soon!!</p>
+          <span className="text-red-500 text-2xl mt-5">Email: </span>
+          {Email}
+          <p className="mt-4 mb-5 w-[100%]">
+            <span className="text-red-500 text-2xl mt-5">Message: </span>
+            <br />
+
+            {Message}
+          </p>
+        </div>
+      ) : (
+        <></>
+      )}
       <div class="absolute inset-0 bg-gray-300">
         <iframe
           width="100%"
@@ -32,6 +60,10 @@ const Contact = () => {
               id="email"
               name="email"
               class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              value={Email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             />
           </div>
           <div class="relative mb-4">
@@ -40,11 +72,18 @@ const Contact = () => {
             </label>
             <textarea
               id="message"
+              value={Message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
               name="message"
               class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
             ></textarea>
           </div>
-          <button class="text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">
+          <button
+            class="text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg"
+            onClick={Send}
+          >
             Send
           </button>
           <p class="text-xs text-gray-500 mt-3">

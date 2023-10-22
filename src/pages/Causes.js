@@ -9,7 +9,6 @@ const Causes = () => {
   const [One, setOne] = useState(inactive);
   const [Two, setTwo] = useState(inactive);
   const [Three, setThree] = useState(active);
-
   return (
     <div className="mb-[120px] flex flex-col items-center">
       <div
@@ -47,7 +46,7 @@ const Causes = () => {
                 className={
                   "border-0 py-2 px-6 focus:outline-none hover:bg-white hover:text-red-500 rounded-none text-lg " +
                   Three
-                }
+                }bg-white text-red-500
                 onClick={() => {
                   setOne(inactive);
                   setTwo(inactive);

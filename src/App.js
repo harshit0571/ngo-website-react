@@ -19,7 +19,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout User={User} setUser={setUser} />} >
+        <Route path="/" element={<Layout User={User} setUser={setUser} />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="causes" element={<Causes />} />

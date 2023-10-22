@@ -1043,6 +1043,14 @@ li {
     align-items: center;
     padding: 20px;
   }
+  .help-container {
+    display: flex;
+    margin-top: 0px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
   .about-text {
     display: flex;
     flex-direction: column;
