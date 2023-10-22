@@ -2,6 +2,10 @@ import React, { useLayoutEffect } from "react";
 import DonationCard from "../components/DonationCard";
 
 const Home = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+    console.log("fdfddf");
+  }, []);
   return (
     <div>
       <section class="banner-1">

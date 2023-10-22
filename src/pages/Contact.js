@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const Contact = () => {
   const [Email, setEmail] = useState("");
@@ -11,6 +11,10 @@ const Contact = () => {
     }, 3000);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    console.log("fdfddf");
+  }, []);
   const inputRef = useRef("");
   const messRef = useRef("");
 

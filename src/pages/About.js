@@ -4,6 +4,10 @@ import Card from "../components/Card";
 import AboutCard from "../components/AboutCard";
 
 const About = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+    console.log("fdfddf");
+  }, []);
   return (
     <div className="flex flex-col">
       <div

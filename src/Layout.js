@@ -9,9 +9,7 @@ const Layout = ({ User, setUser }) => {
   const { pathname } = useLocation();
   // Automatically scrolls to top whenever pathname changes
   console.log(User, "layout");
-  useLayoutEffect(() => {
-    window.scroll(0, 0);
-  }, []);
+
   return (
     <div>
       <HeaderNav />

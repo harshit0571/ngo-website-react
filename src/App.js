@@ -10,12 +10,12 @@ import News from "./pages/News";
 import Events from "./pages/Event";
 import Login from "./pages/Login";
 import UseGlobal from "./hooks/UseGlobal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const { getUser } = UseGlobal();
   const [User, setUser] = useState(getUser());
-  console.log(User, "home");
+
   return (
     <BrowserRouter>
       <Routes>

@@ -166,7 +166,7 @@ const Footer = () => {
             </div>
           </div>
           <p class="copyright">
-            Copyright @ 2017. Developed by Harshit Chadha. All Rights Reserved.
+            Copyright @ 2023. Developed by Harshit Chadha. All Rights Reserved.
           </p>
         </div>
       </section>

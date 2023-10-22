@@ -1,8 +1,12 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import Card from "../components/Card";
 import EventsCards from "../components/EventsCards";
 
 const Events = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+    console.log("fdfddf");
+  }, []);
   return (
     <div className="w-full mb-[120px]">
       <div className="w-full h-20 bg-red-500 flex items-center justify-center">
