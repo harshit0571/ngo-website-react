@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
 const Contact = () => {
   const [Email, setEmail] = useState("");
@@ -10,6 +10,9 @@ const Contact = () => {
       setTime(false);
     }, 3000);
   };
+
+  const inputRef = useRef("");
+  const messRef = useRef("");
 
   return (
     <section class="text-gray-600 body-font relative">
@@ -61,8 +64,9 @@ const Contact = () => {
               name="email"
               class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               value={Email}
-              onChange={(e) => {
-                setEmail(e.target.value);
+              ref={inputRef}
+              onChange={() => {
+                setEmail(inputRef.current.value);
               }}
             />
           </div>
@@ -73,8 +77,9 @@ const Contact = () => {
             <textarea
               id="message"
               value={Message}
-              onChange={(e) => {
-                setMessage(e.target.value);
+              ref={messRef}
+              onChange={() => {
+                setMessage(messRef.current.value);
               }}
               name="message"
               class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
