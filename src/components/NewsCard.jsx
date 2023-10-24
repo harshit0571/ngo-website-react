@@ -12,10 +12,10 @@ const NewsCard = () => {
             <div class="h-1 w-20 bg-red-500 rounded"></div>
           </div>
           <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
-            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-            gentrify, subway tile poke farm-to-table. Franzen you probably
-            haven't heard of them man bun deep jianbing selfies heirloom prism
-            food truck ugh squid celiac humblebrag.
+            Connect with like-minded individuals and organizations passionate
+            about charity and social change. These networking sessions provide
+            the perfect environment for forging valuable partnerships and
+            collaborations.
           </p>
         </div>
         <div class="flex flex-wrap -m-4">
@@ -33,8 +33,9 @@ const NewsCard = () => {
                 Banglore Charity
               </h2>
               <p class="leading-relaxed text-base">
-                Fingerstache flexitarian street art 8-bit waistcoat. Distillery
-                hexagon disrupt edison bulbche.
+                The Annual Charity Conference is an eagerly anticipated event
+                that brings together leaders, advocates, and stakeholders from
+                the non-profit sector.
               </p>
             </div>
           </div>
@@ -52,8 +53,9 @@ const NewsCard = () => {
                 Mumbai Charity
               </h2>
               <p class="leading-relaxed text-base">
-                Fingerstache flexitarian street art 8-bit waistcoat. Distillery
-                hexagon disrupt edison bulbche.
+                The Annual Charity Conference is an eagerly anticipated event
+                that brings together leaders, advocates, and stakeholders from
+                the non-profit sector.
               </p>
             </div>
           </div>
@@ -71,8 +73,9 @@ const NewsCard = () => {
                 Delhi Charity
               </h2>
               <p class="leading-relaxed text-base">
-                Fingerstache flexitarian street art 8-bit waistcoat. Distillery
-                hexagon disrupt edison bulbche.
+                The Annual Charity Conference is an eagerly anticipated event
+                that brings together leaders, advocates, and stakeholders from
+                the non-profit sector.
               </p>
             </div>
           </div>
@@ -90,8 +93,9 @@ const NewsCard = () => {
                 Kolkata News
               </h2>
               <p class="leading-relaxed text-base">
-                Fingerstache flexitarian street art 8-bit waistcoat. Distillery
-                hexagon disrupt edison bulbche.
+                The Annual Charity Conference is an eagerly anticipated event
+                that brings together leaders, advocates, and stakeholders from
+                the non-profit sector.
               </p>
             </div>
           </div>

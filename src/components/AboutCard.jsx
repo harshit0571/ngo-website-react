@@ -28,11 +28,10 @@ const AboutCard = () => {
             </div>
             <div class="flex-grow">
               <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
-                Shooting Stars
+                Our NGO
               </h2>
               <p class="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                taxidermy. Gastropub indxgo juice poutine.
+                addressing the pressing challenges faced by{" "}
               </p>
               <a class="mt-3 text-indigo-500 inline-flex items-center">
                 Learn More
@@ -68,11 +67,10 @@ const AboutCard = () => {
             </div>
             <div class="flex-grow">
               <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
-                The Catalyzer
+                Our NGO
               </h2>
               <p class="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                taxidermy. Gastropub indxgo juice poutine.
+                addressing the pressing challenges faced by{" "}
               </p>
               <a class="mt-3 text-indigo-500 inline-flex items-center">
                 Learn More
@@ -107,11 +105,10 @@ const AboutCard = () => {
             </div>
             <div class="flex-grow">
               <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
-                Neptune
+                Our NGO
               </h2>
               <p class="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                taxidermy. Gastropub indxgo juice poutine.
+                addressing the pressing challenges faced by{" "}
               </p>
               <a class="mt-3 text-indigo-500 inline-flex items-center">
                 Learn More

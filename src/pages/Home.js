@@ -16,10 +16,10 @@ const Home = () => {
           <p class="banner-heading-1">BRING CLEAN WATER TO</p>
           <p class="banner-heading-2">AN ASIAN VILLAGE</p>
           <p class="banner-heading-3">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad
-            asperiores odit officiis unde obcaecati et beatae dolorem quasi
-            vitae. Hic sint dolores ex. Minus deserunt veniam veritatis quia
-            velit amet.
+            Access to clean and safe drinking water is a fundamental human
+            right, yet many villages in Asia still struggle with waterborne
+            diseases and the burden of fetching water from distant, contaminated
+            sources.
           </p>
           <button>Donate Now</button>
         </div>
@@ -36,8 +36,8 @@ const Home = () => {
             </div>
             <h1>Expertise Skills</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Doloribus eos adipisci autem consectetur ad illum et?
+              With a profound knowledge of cutting-edge technologies, years of
+              hands-on experience.
             </p>
           </div>
 
@@ -47,8 +47,8 @@ const Home = () => {
             </div>
             <h1>Give Inspiration</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Doloribus eos adipisci autem consectetur ad illum et?
+              Every great accomplishment begins with a spark of inspiration.
+              It's the driving.
             </p>
           </div>
 
@@ -58,8 +58,8 @@ const Home = () => {
             </div>
             <h1>Expertise Skills</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Doloribus eos adipisci autem consectetur ad illum et?
+              Our deep expertise in diverse fields allows us to provide support
+              and insights.
             </p>
           </div>
 
@@ -69,8 +69,8 @@ const Home = () => {
             </div>
             <h1>Give Inspiration</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Doloribus eos adipisci autem consectetur ad illum et?
+              In the journey of life, challenges may seem daunting, but they are
+              opportunities in disguise.
             </p>
           </div>
         </div>
@@ -85,11 +85,11 @@ const Home = () => {
             <p class="about-heading-2">WE ARE</p>
             <p class="about-heading-2">NON-PROFIT TEAM</p>
             <p class="about-heading-3">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Recusandae numquam, dignissimos, asperiores minima ullam fugit,
-              quas magni quod tempore provident repellat vero delectus deleniti
-              praesentium necessitatibus eligendi obcaecati voluptatum
-              quibusdam.
+              We are a team of dedicated individuals, volunteers, and supporters
+              who share a common vision: to alleviate suffering, promote
+              equality, and uplift communities. With unwavering determination
+              and a heartfelt passion for change, we have undertaken numerous
+              projects and initiatives.
             </p>
             <button>Donate Now</button>
           </div>
@@ -179,10 +179,10 @@ const Home = () => {
         <div class="dialog">
           <img src="assets/quotes.png" />
           <p style={{ marginBottom: "30px" }}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            optio dolore dignissimos ex quae? Similique obcaecati laborum earum
-            illum quisquam, animi inventore, esse quos fugit assumenda magnam?
-            Itaque, ratione! Ratione.
+            People say that life is a journey, and along the way, we encounter
+            joys, sorrows, and countless moments that shape our stories. What we
+            say and do, the connections we make, and the impact we leave on the
+            world are all part of this beautiful narrative
           </p>
 
           <div class="triangle"></div>

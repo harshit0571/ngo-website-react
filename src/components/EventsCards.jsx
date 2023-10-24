@@ -14,11 +14,11 @@ const EventsCards = () => {
                 Banglore
               </h2>
               <h1 class="title-font sm:text-2xl text-xl font-medium text-white mb-3">
-                Ennui Snackwave Thundercats
+                Anual Charity Conference
               </h1>
               <p class="leading-relaxed text-gray-300 mb-3">
-                Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-                microdosing tousled waistcoat.
+                The Annual Charity Conference is an eagerly anticipated event
+                that brings together leaders, advocates.
               </p>
               <a class="text-indigo-500 inline-flex items-center">
                 Attend
@@ -77,11 +77,11 @@ const EventsCards = () => {
                 Mumbai
               </h2>
               <h1 class="title-font sm:text-2xl text-xl font-medium text-white mb-3">
-                Ennui Snackwave Thundercats
+                Anual Charity Conference
               </h1>
               <p class="leading-relaxed text-gray-300 mb-3">
-                Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-                microdosing tousled waistcoat.
+                The Annual Charity Conference is an eagerly anticipated event
+                that brings together leaders, advocates.
               </p>
               <a class="text-indigo-500 inline-flex items-center">
                 Attend
@@ -140,11 +140,11 @@ const EventsCards = () => {
                 Chennai
               </h2>
               <h1 class="title-font sm:text-2xl text-xl font-medium text-white mb-3">
-                Ennui Snackwave Thundercats
+                Anual Charity Conference
               </h1>
               <p class="leading-relaxed text-gray-300 mb-3">
-                Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-                microdosing tousled waistcoat.
+                The Annual Charity Conference is an eagerly anticipated event
+                that brings together leaders, advocates.
               </p>
               <a class="text-indigo-500 inline-flex items-center">
                 Attend

@@ -37,15 +37,16 @@ const Footer = () => {
           <div class="footer-about">
             <h1>OUR MISSION</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
-              voluptas omnis esse recusandae, nam laudantium alias doloremque
-              consequuntur reprehenderit adipisci commodi nostrum! Blanditiis
-              laudantium nobis quae saepe maiores voluptatem accusamus.
+              Bringing clean water to an Asian village is a vital and impactful
+              endeavor that can significantly improve the lives of the
+              community's residents. Access to clean and safe drinking water is
+              a fundamental human right
             </p>
             <br />
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-              culpa voluptatibus iusto magni quas.
+              Initiatives focused on delivering clean water to Asian villages
+              serve as a testament to our collective responsibility in ensuring
+              a sustainable and equitable world.
             </p>
           </div>
 
