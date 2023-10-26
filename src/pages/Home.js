@@ -1,11 +1,14 @@
 import React, { useLayoutEffect } from "react";
 import DonationCard from "../components/DonationCard";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
     console.log("fdfddf");
   }, []);
+
+  const navigate = useNavigate();
   return (
     <div>
       <section class="banner-1">
@@ -21,7 +24,13 @@ const Home = () => {
             diseases and the burden of fetching water from distant, contaminated
             sources.
           </p>
-          <button>Donate Now</button>
+          <button
+            onClick={() => {
+              navigate("causes");
+            }}
+          >
+            Donate Now
+          </button>
         </div>
       </section>
 
@@ -91,7 +100,13 @@ const Home = () => {
               and a heartfelt passion for change, we have undertaken numerous
               projects and initiatives.
             </p>
-            <button>Donate Now</button>
+            <button
+              onClick={() => {
+                navigate("causes");
+              }}
+            >
+              Donate Now
+            </button>
           </div>
         </div>
       </section>
@@ -121,7 +136,13 @@ const Home = () => {
               <div class="feature-heading">
                 Africa Children Need More Food, Water and Clothes
               </div>
-              <button>Donate Now</button>
+              <button
+                onClick={() => {
+                  navigate("causes");
+                }}
+              >
+                Donate Now
+              </button>
             </div>
           </div>
 
@@ -145,7 +166,13 @@ const Home = () => {
               <div class="feature-heading">
                 Africa Children Need More Food, Water and Clothes
               </div>
-              <button>Donate Now</button>
+              <button
+                onClick={() => {
+                  navigate("causes");
+                }}
+              >
+                Donate Now
+              </button>
             </div>
           </div>
 
@@ -168,7 +195,13 @@ const Home = () => {
               <div class="feature-heading">
                 Africa Children Need More Food, Water and Clothes
               </div>
-              <button>Donate Now</button>
+              <button
+                onClick={() => {
+                  navigate("causes");
+                }}
+              >
+                Donate Now
+              </button>
             </div>
           </div>
         </div>
