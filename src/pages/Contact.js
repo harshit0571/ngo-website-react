@@ -1,11 +1,29 @@
+import axios from "axios";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const Contact = () => {
   const [Email, setEmail] = useState("");
   const [Message, setMessage] = useState("");
+  const [Name, setName] = useState("");
+  const Post = async () => {
+    await axios
+      .post("http://localhost:8080/contact", {
+        name: Name,
+        email: Email,
+        message: Message,
+      })
+      .then((response) => {
+        console.log(response);
+      });
+    // await axios.get("http://localhost:8080").then((response) => {
+    //   console.log(response);
+    // });
+  };
+
   const [Time, setTime] = useState(false);
   const Send = () => {
     setTime(true);
+    Post();
     setTimeout(() => {
       setTime(false);
     }, 3000);
@@ -16,6 +34,7 @@ const Contact = () => {
     console.log("fdfddf");
   }, []);
   const inputRef = useRef("");
+  const nameRef = useRef("");
   const messRef = useRef("");
 
   return (
@@ -28,6 +47,7 @@ const Contact = () => {
           <p className="text-center">We will reply to you soon!!</p>
           <span className="text-red-500 text-2xl mt-5">Email: </span>
           {Email}
+
           <p className="mt-4 mb-5 w-[100%]">
             <span className="text-red-500 text-2xl mt-5">Message: </span>
             <br />
@@ -60,6 +80,21 @@ const Contact = () => {
           </p>
           <div class="relative mb-4">
             <label for="email" class="leading-7 text-sm text-gray-600">
+              Name
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              value={Name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
+          </div>
+          <div class="relative mb-4">
+            <label for="email" class="leading-7 text-sm text-gray-600">
               Email
             </label>
             <input
@@ -68,12 +103,12 @@ const Contact = () => {
               name="email"
               class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               value={Email}
-              ref={inputRef}
-              onChange={() => {
-                setEmail(inputRef.current.value);
+              onChange={(e) => {
+                setEmail(e.target.value);
               }}
             />
           </div>
+
           <div class="relative mb-4">
             <label for="message" class="leading-7 text-sm text-gray-600">
               Message
@@ -81,9 +116,8 @@ const Contact = () => {
             <textarea
               id="message"
               value={Message}
-              ref={messRef}
-              onChange={() => {
-                setMessage(messRef.current.value);
+              onChange={(e) => {
+                setMessage(e.target.value);
               }}
               name="message"
               class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
