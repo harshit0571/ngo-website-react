@@ -4,6 +4,10 @@ const SignUp = ({ setUser }) => {
   const [name, setname] = useState("");
   const [username, setusername] = useState("");
   const [country, setcountry] = useState("");
+  const [phone, setphone] = useState("");
+  const [gender, setgender] = useState("");
+  const [password, setpassword] = useState("");
+  const [city, setcity] = useState("");
   const [True, setTrue] = useState(true);
   const Register = () => {
     if (name == "" || username == "" || country == "") {
@@ -56,6 +60,10 @@ const SignUp = ({ setUser }) => {
                 <input
                   type="password"
                   required
+                  value={password}
+                  onChange={(e) => {
+                    setpassword(e.target.value);
+                  }}
                   className="border-2 px-1 py-2 text-black font-sans border-black"
                 />
               </div>
@@ -102,6 +110,20 @@ const SignUp = ({ setUser }) => {
                   }}
                 />
               </div>
+
+              <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
+                City:{" "}
+                <input
+                  type="text"
+                  className="border-2 px-1 py-2 text-black font-sans border-black"
+                  value={city}
+                  required
+                  onChange={(e) => {
+                    setcity(e.target.value);
+                  }}
+                />
+              </div>
+
               <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
                 Country:{" "}
                 <input
@@ -116,9 +138,39 @@ const SignUp = ({ setUser }) => {
               </div>
 
               <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
+                Phone:{" "}
+                <input
+                  type="text"
+                  className="border-2 px-1 py-2 text-black font-sans border-black"
+                  value={phone}
+                  required
+                  onChange={(e) => {
+                    setphone(e.target.value);
+                  }}
+                />
+              </div>
+
+              <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
+                Gender:{" "}
+                <input
+                  type="text"
+                  className="border-2 px-1 py-2 text-black font-sans border-black"
+                  value={gender}
+                  required
+                  onChange={(e) => {
+                    setgender(e.target.value);
+                  }}
+                />
+              </div>
+
+              <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
                 Password:{" "}
                 <input
+                  value={password}
                   required
+                  onChange={(e) => {
+                    setpassword(e.target.value);
+                  }}
                   type="password"
                   className="border-2 px-1 py-2 text-black font-sans border-black"
                 />
