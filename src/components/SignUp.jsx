@@ -1,18 +1,33 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 const SignUp = ({ setUser }) => {
-  const [name, setname] = useState("");
-  const [username, setusername] = useState("");
-  const [state, setstate] = useState("");
-  const [phone, setphone] = useState("");
-  const [address, setaddress] = useState("");
-  const [password, setpassword] = useState("");
-  const [city, setcity] = useState("");
+  const [name, setname] = useState("a");
+  const [username, setusername] = useState("a");
+  const [state, setstate] = useState("a");
+  const [phone, setphone] = useState("a");
+  const [address, setaddress] = useState("a");
+  const [password, setpassword] = useState("a");
+  const [city, setcity] = useState("a");
+  const [email, setemail] = useState("a");
   const [True, setTrue] = useState(true);
-  const Register = () => {
+  const Register = async () => {
     if (name == "" || username == "" || state == "") {
       alert("please fill all details");
     } else {
+      await axios.post("http://localhost:8000/user/register", {
+        username: username,
+        full_name: name,
+        address: address,
+        city: city,
+        state: state,
+        email: email,
+        phone_number: phone,
+        password: password,
+      }).then((response) => {
+        console.log(response);
+      });;
+
       setUser({ name: name, username: username, state: state });
     }
   };
@@ -50,6 +65,19 @@ const SignUp = ({ setUser }) => {
                   value={username}
                   onChange={(e) => {
                     setusername(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+
+              <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
+                Email:{" "}
+                <input
+                  type="text"
+                  className="border-2 px-1 py-2 text-black font-sans border-black"
+                  value={email}
+                  onChange={(e) => {
+                    setemail(e.target.value);
                   }}
                   required
                 />
@@ -108,6 +136,19 @@ const SignUp = ({ setUser }) => {
                   onChange={(e) => {
                     setusername(e.target.value);
                   }}
+                />
+              </div>
+
+              <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
+                Email:{" "}
+                <input
+                  type="text"
+                  className="border-2 px-1 py-2 text-black font-sans border-black"
+                  value={email}
+                  onChange={(e) => {
+                    setemail(e.target.value);
+                  }}
+                  required
                 />
               </div>
 
