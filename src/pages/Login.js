@@ -10,7 +10,7 @@ const Login = ({ User, setUser }) => {
   }, []);
   return (
     <div className="flex flex-col mb-20">
-      {User.name ? (
+      {User.username ? (
         <LoggedIn setUser={setUser} user={User} />
       ) : (
         <SignUp setUser={setUser} />

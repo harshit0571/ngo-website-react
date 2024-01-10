@@ -2,10 +2,14 @@ import React from "react";
 
 const UseGlobal = () => {
   let User = {
-    name: null,
     username: null,
-    country: null,
-    status: null,
+    full_name: null,
+    address: null,
+    city: null,
+    state: null,
+    email: null,
+    phone_number: null,
+    password: null,
   };
   const updateUser = (user) => {
     User = user;

@@ -2,20 +2,35 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const SignUp = ({ setUser }) => {
-  const [name, setname] = useState("a");
-  const [username, setusername] = useState("a");
-  const [state, setstate] = useState("a");
-  const [phone, setphone] = useState("a");
-  const [address, setaddress] = useState("a");
-  const [password, setpassword] = useState("a");
-  const [city, setcity] = useState("a");
-  const [email, setemail] = useState("a");
+  const [name, setname] = useState("");
+  const [username, setusername] = useState("");
+  const [state, setstate] = useState("");
+  const [phone, setphone] = useState("");
+  const [address, setaddress] = useState("");
+  const [password, setpassword] = useState("");
+  const [city, setcity] = useState("");
+  const [email, setemail] = useState("");
   const [True, setTrue] = useState(true);
   const Register = async () => {
     if (name == "" || username == "" || state == "") {
       alert("please fill all details");
     } else {
-      await axios.post("http://localhost:8000/user/register", {
+      await axios
+        .post("http://localhost:8000/user/register", {
+          username: username,
+          full_name: name,
+          address: address,
+          city: city,
+          state: state,
+          email: email,
+          phone_number: phone,
+          password: password,
+        })
+        .then((response) => {
+          console.log(response);
+        });
+
+      setUser({
         username: username,
         full_name: name,
         address: address,
@@ -24,18 +39,24 @@ const SignUp = ({ setUser }) => {
         email: email,
         phone_number: phone,
         password: password,
-      }).then((response) => {
-        console.log(response);
-      });;
-
-      setUser({ name: name, username: username, state: state });
+      });
+      setTrue(!True);
     }
   };
-  const SignIN = () => {
-    if (name == "" || username == "") {
+  const SignIN = async () => {
+    if (password == "" || username == "") {
       alert("please fill all details");
     } else {
-      setUser({ name: name, username: username });
+      const res = await axios.post("http://localhost:8000/user/login", {
+        username: username,
+        password: password,
+      });
+      console.log(res.data.message);
+      if (res.data.message === "success") {
+        setUser(res.data.user);
+      } else {
+        alert("password or username invalid");
+      }
     }
   };
   return (
@@ -45,18 +66,7 @@ const SignUp = ({ setUser }) => {
           <div className="flex flex-col w-[98%] md:w-[50%] xl:w-[40%] pb-5 justify-between items-center border-2 lg:p-4 pt-7 shadow-[0_20px_50px_rgba(0,0,0,0.7)] gap-10">
             <div className="flex flex-col w-full items-center gap-5">
               <h1 className="text-red-500 font-bold text-3xl">LOGIN</h1>
-              <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
-                Name:{" "}
-                <input
-                  type="text"
-                  className="border-2 px-1 py-2 text-black font-sans border-black"
-                  value={name}
-                  onChange={(e) => {
-                    setname(e.target.value);
-                  }}
-                  required
-                />
-              </div>
+
               <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
                 User Name:{" "}
                 <input
@@ -65,19 +75,6 @@ const SignUp = ({ setUser }) => {
                   value={username}
                   onChange={(e) => {
                     setusername(e.target.value);
-                  }}
-                  required
-                />
-              </div>
-
-              <div className="flex w-[80%] items-baseline justify-between text-red-600 font-bold">
-                Email:{" "}
-                <input
-                  type="text"
-                  className="border-2 px-1 py-2 text-black font-sans border-black"
-                  value={email}
-                  onChange={(e) => {
-                    setemail(e.target.value);
                   }}
                   required
                 />

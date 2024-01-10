@@ -27,8 +27,6 @@ const About = () => {
         </div>
       </div>
 
-      <AboutCard />
-
       <div className="w-full bg-[var(--red)] py-10 pb-[100px] flex-col justify-around items-center">
         <h1 className="text-center text-2xl tracking-tighter font-bold text-white">
           OUR MILESTONES
