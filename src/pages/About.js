@@ -2,12 +2,25 @@ import React from "react";
 import "../App.css";
 import Card from "../components/Card";
 import AboutCard from "../components/AboutCard";
+import axios from "axios";
+import { useState } from "react";
 
 const About = () => {
+  const [data, setdata] = useState([]);
   React.useEffect(() => {
     window.scrollTo(0, 0);
-    console.log("fdfddf");
   }, []);
+  React.useEffect(() => {
+    const getMilestones = async () => {
+      const res = await axios.get("http://localhost:8000/milestones", {
+        responseType: "json",
+      });
+      console.log(res);
+      setdata(res.data);
+    };
+    getMilestones();
+  }, []);
+
   return (
     <div className="flex flex-col">
       <div
@@ -31,25 +44,19 @@ const About = () => {
         <h1 className="text-center text-2xl tracking-tighter font-bold text-white">
           OUR MILESTONES
         </h1>
-        <div className="flex flex-col sm:flex-row items-center mt-7 gap-5 w-full justify-around">
-          <Card
-            heading="2014"
-            para="addressing the pressing challenges
-            faced by"
-            img="/assets/feature1.png"
-          />
-          <Card
-            heading="2018"
-            para="addressing the pressing challenges
-          faced by "
-            img="/assets/feature2.png"
-          />
-          <Card
-            heading="2021"
-            para="addressing the pressing challenges
-        faced by"
-            img="/assets/feature3.png"
-          />
+        <div className="flex flex-wrap flex-col sm:flex-row items-center mt-7 gap-5 w-full justify-around">
+          {data &&
+            data.map((milestone) => {
+              return (
+                <Card
+                  key={milestone.id}
+                  heading={milestone.year}
+                  para={milestone.title}
+                  desc={milestone.description}
+                  img={milestone.photourl}
+                />
+              );
+            })}
         </div>
       </div>
     </div>

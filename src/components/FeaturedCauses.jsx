@@ -1,6 +1,14 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
 
 const FeaturedCauses = () => {
+  useEffect(() => {
+    const getCauses = async () => {
+      const res = await axios.get("http://localhost:8000/causes");
+      console.log(res.data);
+    };
+    getCauses();
+  }, []);
   return (
     <section class="feature-section mb-20">
       <p>
@@ -8,6 +16,7 @@ const FeaturedCauses = () => {
       </p>
 
       <div class="featured-container">
+        {}
         <div class="featured-card">
           <div class="feature-img">
             <img src="assets/feature1.png" />
