@@ -41,10 +41,10 @@ const Causes = () => {
         </div>
 
         <div className="flex flex-col md:w-[80%] w-[98%] border-2 border-black items-center">
-          <img
+          {/* <img
             src="assets/causes-edu.jpg"
             className="w-full h-[200px] md:h-[500px]"
-          />
+          /> */}
           <div className="w-full">
             <div className="w-full h-20 bg-red-500 flex">
               <button

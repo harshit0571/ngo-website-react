@@ -9,6 +9,10 @@ const EventsCards = () => {
             <div
               id="event2"
               class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(https://res.cloudinary.com/dekxyuk6k/image/upload/v1704952649/e75cccgustrrau6k1n3y.png)",
+              }}
             >
               <h2 class="tracking-widest text-xs title-font font-medium text-gray-300 mb-1">
                 Banglore

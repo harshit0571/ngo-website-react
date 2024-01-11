@@ -1,11 +1,32 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import DonationCard from "../components/DonationCard";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import FeaturedCard from "../components/FeaturedCard";
 
 const Home = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
     console.log("fdfddf");
+  }, []);
+
+  const [data, setdata] = useState([]);
+  const [team, setteam] = useState([]);
+
+  useEffect(() => {
+    const getCauses = async () => {
+      const res = await axios.get("http://localhost:8000/causes");
+      console.log(res.data);
+      setdata(res.data);
+    };
+    const getMembers = async () => {
+      const res = await axios.get("http://localhost:8000/team_members");
+      console.log(res.data);
+      setteam(res.data);
+    };
+    console.log(team);
+    getCauses();
+    getMembers();
   }, []);
 
   const navigate = useNavigate();
@@ -117,93 +138,16 @@ const Home = () => {
         </p>
 
         <div class="featured-container">
-          <div class="featured-card">
-            <div class="feature-img">
-              <img src="assets/feature1.png" />
-              <div class="feature-bar">
-                <div class="line">
-                  <span class="line-1"></span>
-                  <span class="line-2"></span>
-                  <p>30%</p>
-                </div>
-              </div>
-            </div>
-            <div class="feature-text">
-              <div class="stats">
-                <p>Raised: $300,000</p>
-                <p>Goal: $800,000</p>
-              </div>
-              <div class="feature-heading">
-                Africa Children Need More Food, Water and Clothes
-              </div>
-              <button
-                onClick={() => {
-                  navigate("causes");
-                }}
-              >
-                Donate Now
-              </button>
-            </div>
-          </div>
-
-          <div class="featured-card">
-            <div class="feature-img">
-              <img src="assets/feature2.png" />
-              <div class="feature-bar">
-                <div class="line">
-                  <span class="line-1"></span>
-                  <span class="line-2"></span>
-                  <p>30%</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="feature-text">
-              <div class="stats">
-                <p>Raised: $300,000</p>
-                <p>Goal: $800,000</p>
-              </div>
-              <div class="feature-heading">
-                Africa Children Need More Food, Water and Clothes
-              </div>
-              <button
-                onClick={() => {
-                  navigate("causes");
-                }}
-              >
-                Donate Now
-              </button>
-            </div>
-          </div>
-
-          <div class="featured-card">
-            <div class="feature-img">
-              <img src="assets/feature3.png" />
-              <div class="feature-bar">
-                <div class="line">
-                  <span class="line-1"></span>
-                  <span class="line-2"></span>
-                  <p>30%</p>
-                </div>
-              </div>
-            </div>
-            <div class="feature-text">
-              <div class="stats">
-                <p>Raised: $300,000</p>
-                <p>Goal: $800,000</p>
-              </div>
-              <div class="feature-heading">
-                Africa Children Need More Food, Water and Clothes
-              </div>
-              <button
-                onClick={() => {
-                  navigate("causes");
-                }}
-              >
-                Donate Now
-              </button>
-            </div>
-          </div>
+          {data.map((cause) => {
+            return (
+              <FeaturedCard
+                raised={cause.raised_money}
+                goal={cause.goal}
+                title={cause.title}
+                img={cause.photourl}
+              />
+            );
+          })}
         </div>
       </section>
 
@@ -235,41 +179,23 @@ const Home = () => {
 
       <section class="volunteer">
         <p class="title">
-          BEST <span style={{ color: "var(--red)" }}>VOLUNTEERS</span>
+          OUR <span style={{ color: "var(--red)" }}>TEAM</span>
         </p>
 
         <div class="help-container">
-          <div class="cards">
-            <div class="help-img">
-              <img src="assets/vol1.png" />
-            </div>
-            <h1>JOHN DOE</h1>
-            <p>Volunteer</p>
-          </div>
-
-          <div class="cards">
-            <div class="help-img">
-              <img src="assets/vol2.png" />
-            </div>
-            <h1>JOHN DOE</h1>
-            <p>Volunteer</p>
-          </div>
-
-          <div class="cards">
-            <div class="help-img">
-              <img src="assets/vol3.png" />
-            </div>
-            <h1>JOHN DOE</h1>
-            <p>Volunteer</p>
-          </div>
-
-          <div class="cards">
-            <div class="help-img">
-              <img src="assets/vol4.png" />
-            </div>
-            <h1>JOHN DOE</h1>
-            <p>Volunteer</p>
-          </div>
+          {team.map((data) => {
+            return (
+              <div class="cards">
+                <div class="help-img">
+                  <img src={data.photoUrl} />
+                </div>
+                <h1>
+                  {data.first_name} {data.last_name}
+                </h1>
+                <p>{data.role}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>
