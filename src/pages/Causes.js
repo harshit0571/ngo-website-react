@@ -17,7 +17,7 @@ const Causes = () => {
       const res = await axios.get("http://localhost:8000/user/login", {
         withCredentials: true,
       });
-      setUser(res.data.session);
+      setUser(res.data);
       console.log(User, "cause");
     };
     checkSession();

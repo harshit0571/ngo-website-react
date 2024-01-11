@@ -4,22 +4,10 @@ import { useNavigate } from "react-router-dom";
 const DonationCard = ({ User }) => {
   const [Donation, setDonation] = useState("");
   const navigate = useNavigate();
-  console.log(User);
+  console.log(User, "don");
   return (
     <>
-      {User && User.username ? (
-        <div className="flex flex-col items-center justify-around gap-5 mb-20 w-full">
-          <h1 className="font-sans text-2xl mt-5">please login to donate</h1>
-          <button
-            className="border-0 bg-red-500 py-5 px-5 min-w-[150px] focus:outline-none hover:bg-red-200 hover:text-red-500 rounded text-lg "
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Login
-          </button>
-        </div>
-      ) : (
+      {User ? (
         <div className="flex flex-col items-center justify-around gap-5 mb-20 w-full">
           <h1 className="font-sans text-2xl mt-5">Make A One-Time Gift</h1>
           <div className="flex flex-row justify-around gap-5 mt-5 flex-wrap w-[80%]">
@@ -73,6 +61,18 @@ const DonationCard = ({ User }) => {
             }}
           >
             Donate
+          </button>
+        </div>
+      ) : (
+        <div className="flex flex-col items-center justify-around gap-5 mb-20 w-full">
+          <h1 className="font-sans text-2xl mt-5">please login to donate</h1>
+          <button
+            className="border-0 bg-red-500 py-5 px-5 min-w-[150px] focus:outline-none hover:bg-red-200 hover:text-red-500 rounded text-lg "
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Login
           </button>
         </div>
       )}
