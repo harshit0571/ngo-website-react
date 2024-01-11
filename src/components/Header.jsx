@@ -89,7 +89,7 @@ const Header = ({ path, User }) => {
             <li>
               <a href="#" style={{ color: path == "/login" ? "red" : "" }}>
                 <i class="fa fa-user" aria-hidden="true"></i>
-                {User.username ? User.username : " Sign in"}
+                {User && User.username ? User.username : " Sign in"}
               </a>
             </li>
           </Link>

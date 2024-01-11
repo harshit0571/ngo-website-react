@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UseGlobal from "../hooks/UseGlobal";
+import axios from "axios";
 
 const LoggedIn = ({ user, setUser }) => {
   const { getUser, updateUser, check } = UseGlobal();
@@ -11,6 +12,21 @@ const LoggedIn = ({ user, setUser }) => {
   const [address, setaddress] = useState(user.address || "");
   const [password, setpassword] = useState("");
   const [email, setemail] = useState(user.email || "");
+
+  const logout = async () => {
+    const res = await axios.get("http://localhost:8000/user/logout");
+    console.log(res);
+    setUser({
+      username: null,
+      full_name: null,
+      address: null,
+      city: null,
+      state: null,
+      email: null,
+      phone_number: null,
+      password: null,
+    });
+  };
 
   return (
     <div className="flex flex-col mt-7 justify-center gap-5 items-center">
@@ -120,7 +136,7 @@ const LoggedIn = ({ user, setUser }) => {
           </button>
           <button
             onClick={() => {
-              setUser({ name: null, country: null, username: null });
+              logout();
             }}
           >
             Log out

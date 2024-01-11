@@ -1,11 +1,22 @@
-import React, { useEffect, useLayoutEffect } from "react";
 import Card from "../components/Card";
 import EventsCards from "../components/EventsCards";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const Events = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
     console.log("fdfddf");
+  }, []);
+
+  const [data, setdata] = useState([]);
+  useEffect(() => {
+    const getEvents = async () => {
+      const res = await axios.get("http://localhost:8000/events");
+      console.log(res.data);
+      setdata(res.data);
+    };
+    getEvents();
   }, []);
   return (
     <div className="w-full mb-[120px]">
@@ -37,7 +48,7 @@ const Events = () => {
         Upcoming{" "}
         <span className="text-red-500 text-center text-5xl mt-5">Events</span>
       </h1>
-      <EventsCards />
+      <EventsCards data={data} />
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const SignUp = ({ setUser }) => {
+const SignUp = ({ setUser, setcurrent }) => {
   const [name, setname] = useState("");
   const [username, setusername] = useState("");
   const [state, setstate] = useState("");
@@ -11,6 +12,8 @@ const SignUp = ({ setUser }) => {
   const [city, setcity] = useState("");
   const [email, setemail] = useState("");
   const [True, setTrue] = useState(true);
+  const navigate = useNavigate();
+
   const Register = async () => {
     if (name == "" || username == "" || state == "") {
       alert("please fill all details");
@@ -47,13 +50,21 @@ const SignUp = ({ setUser }) => {
     if (password == "" || username == "") {
       alert("please fill all details");
     } else {
-      const res = await axios.post("http://localhost:8000/user/login", {
-        username: username,
-        password: password,
-      });
-      console.log(res.data.message);
+      const res = await axios.post(
+        "http://localhost:8000/user/login",
+        {
+          username: username,
+          password: password,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+      // console.log(res.data.message);
       if (res.data.message === "success") {
         setUser(res.data.user);
+        navigate("/login");
+        setcurrent(res.data.user);
       } else {
         alert("password or username invalid");
       }
