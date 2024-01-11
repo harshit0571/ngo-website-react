@@ -8,12 +8,12 @@ const Login = ({ User, setUser }) => {
   // const axiosInstance = axios.create({
   //   withCredentials: true,
   // });
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const checkSession = async () => {
       const res = await axios.get("http://localhost:8000/user/login", {
         withCredentials: true,
-        credentials: "include",
       });
       setcurrent(res.data);
       setUser(res.data.session);
@@ -24,7 +24,7 @@ const Login = ({ User, setUser }) => {
 
   return (
     <div className="flex flex-col mb-20">
-      {User.username ? (
+      {User && User.username ? (
         <LoggedIn setUser={setUser} user={User} />
       ) : (
         <SignUp setUser={setUser} setcurrent={setcurrent} />

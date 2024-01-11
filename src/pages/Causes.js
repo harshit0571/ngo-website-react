@@ -2,6 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import Stats from "../components/Stats";
 import FeaturedCauses from "../components/FeaturedCauses";
 import DonationCard from "../components/DonationCard";
+import axios from "axios";
 
 const Causes = () => {
   const active = "bg-white text-red-500";
@@ -9,11 +10,19 @@ const Causes = () => {
   const [One, setOne] = useState(inactive);
   const [Two, setTwo] = useState(inactive);
   const [Three, setThree] = useState(active);
-
+  const [User, setUser] = useState();
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log("fdfddf");
+    const checkSession = async () => {
+      const res = await axios.get("http://localhost:8000/user/login", {
+        withCredentials: true,
+      });
+      setUser(res.data.session);
+      console.log(User, "cause");
+    };
+    checkSession();
   }, []);
+
   return (
     <div className="mb-[120px] flex flex-col items-center">
       <div
@@ -93,7 +102,7 @@ const Causes = () => {
             <div className="w-full">
               {One == active && <Stats />}
               {Two == active && <FeaturedCauses />}
-              {Three == active && <DonationCard />}
+              {Three == active && <DonationCard User={User && User.session} />}
             </div>
           </div>
         </div>

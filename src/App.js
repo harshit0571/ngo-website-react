@@ -21,13 +21,11 @@ function App() {
     const checkSession = async () => {
       const res = await axios.get("http://localhost:8000/user/login", {
         withCredentials: true,
-        credentials: "include",
       });
       setUser(res.data.session);
     };
     checkSession();
   }, []);
-
   return (
     <BrowserRouter>
       <Routes>

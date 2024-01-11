@@ -14,7 +14,9 @@ const LoggedIn = ({ user, setUser }) => {
   const [email, setemail] = useState(user.email || "");
 
   const logout = async () => {
-    const res = await axios.get("http://localhost:8000/user/logout");
+    const res = await axios.get("http://localhost:8000/user/logout", {
+      withCredentials: true,
+    });
     console.log(res);
     setUser({
       username: null,
@@ -32,7 +34,7 @@ const LoggedIn = ({ user, setUser }) => {
     <div className="flex flex-col mt-7 justify-center gap-5 items-center">
       <h1>
         Logged in as: <i className="fa fa-user" aria-hidden="true"></i>
-        {name}
+        {username}
       </h1>
 
       <div className="flex flex-col w-[98%] md:w-[50%] xl:w-[40%] pb-5 justify-between items-center border-2 lg:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.7)] gap-10">
@@ -116,24 +118,7 @@ const LoggedIn = ({ user, setUser }) => {
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <button
-            onClick={() => {
-              // Handle the update logic using the updated state variables
-              const updatedUser = {
-                name,
-                username,
-                city,
-                state,
-                phone,
-                address,
-                email,
-              };
-              setUser(updatedUser);
-              alert("Changes updated :)");
-            }}
-          >
-            Update
-          </button>
+          <button onClick={() => {}}>Update</button>
           <button
             onClick={() => {
               logout();
