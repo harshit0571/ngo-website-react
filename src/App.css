@@ -406,16 +406,14 @@ span {
   margin-left: 10px;
 }
 .line-1 {
-  width: 30%;
-  float: left;
+  /* width: 30%; */
   border-start-start-radius: 40px;
   border-end-start-radius: 40px;
   height: 10px;
   background-color: var(--red);
 }
 .line-2 {
-  width: 70%;
-  float: right;
+  /* width: 70%; */
   border-start-end-radius: 40px;
   border-end-end-radius: 40px;
   height: 10px;
