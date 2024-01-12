@@ -15,25 +15,12 @@ const SignUp = ({ setUser, setcurrent }) => {
   const navigate = useNavigate();
 
   const Register = async () => {
+    console.log("D");
     if (name == "" || username == "" || state == "") {
       alert("please fill all details");
     } else {
-      await axios
-        .post("http://localhost:8000/user/register", {
-          username: username,
-          full_name: name,
-          address: address,
-          city: city,
-          state: state,
-          email: email,
-          phone_number: phone,
-          password: password,
-        })
-        .then((response) => {
-          console.log(response);
-        });
-
-      setUser({
+      console.log("Dd");
+      const res = await axios.post("http://localhost:8000/user/register", {
         username: username,
         full_name: name,
         address: address,
@@ -43,7 +30,13 @@ const SignUp = ({ setUser, setcurrent }) => {
         phone_number: phone,
         password: password,
       });
-      setTrue(!True);
+      var flag = true;
+      if (res.data.message == "fail") {
+        console.log("True");
+        flag = false;
+        alert("unable to create userresponse");
+      }
+      setTrue(flag);
     }
   };
   const SignIN = async () => {
@@ -226,7 +219,13 @@ const SignUp = ({ setUser, setcurrent }) => {
               </div>
             </div>
             <div className="flex flex-col xs:flex-row justify-center items-center gap-5">
-              <button onClick={Register}>Register</button>
+              <button
+                onClick={() => {
+                  Register();
+                }}
+              >
+                Register
+              </button>
               <button
                 onClick={() => {
                   setTrue(!True);
