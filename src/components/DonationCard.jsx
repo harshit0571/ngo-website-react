@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -5,6 +6,27 @@ const DonationCard = ({ User }) => {
   const [Donation, setDonation] = useState("");
   const navigate = useNavigate();
   console.log(User, "don");
+  const currentDate = () => {
+    const currentDate = new Date();
+
+    const formattedDate = currentDate.toISOString().split("T")[0];
+
+    console.log(formattedDate);
+    return formattedDate;
+  };
+  const donate = async () => {
+    const res = await axios.post(
+      "http://localhost:8000/donations/add",
+      {
+        username: User.username,
+        Amount: Donation,
+        Donation_Date: currentDate(),
+      },
+      { withCredentials: true }
+    );
+    alert("thanks for donating");
+    setDonation("");
+  };
   return (
     <>
       {User ? (
@@ -14,7 +36,7 @@ const DonationCard = ({ User }) => {
             <button
               className="border-0 bg-red-500 py-5 px-5 w-[40%] focus:outline-none hover:bg-red-200 hover:text-red-500 rounded text-lg "
               onClick={() => {
-                setDonation("$10");
+                setDonation("10");
               }}
             >
               $10
@@ -22,7 +44,7 @@ const DonationCard = ({ User }) => {
             <button
               className="border-0 bg-red-500 py-5 px-5 w-[40%] focus:outline-none hover:bg-red-200 hover:text-red-500 rounded text-lg "
               onClick={() => {
-                setDonation("$20");
+                setDonation("20");
               }}
             >
               $20
@@ -30,7 +52,7 @@ const DonationCard = ({ User }) => {
             <button
               className="border-0 bg-red-500 py-5 px-5 w-[40%] focus:outline-none hover:bg-red-200 hover:text-red-500 rounded text-lg "
               onClick={() => {
-                setDonation("$30");
+                setDonation("30");
               }}
             >
               30$
@@ -38,7 +60,7 @@ const DonationCard = ({ User }) => {
             <button
               className="border-0 bg-red-500 py-5 px-5 w-[40%] focus:outline-none hover:bg-red-200 hover:text-red-500 rounded text-lg "
               onClick={() => {
-                setDonation("$40");
+                setDonation("40");
               }}
             >
               $40
@@ -56,8 +78,7 @@ const DonationCard = ({ User }) => {
           <button
             className="border-0 bg-red-500 py-5 px-10 focus:outline-none hover:bg-red-200 hover:text-red-500 rounded text-lg "
             onClick={() => {
-              alert("thanks for donating :)");
-              setDonation("");
+              donate();
             }}
           >
             Donate
