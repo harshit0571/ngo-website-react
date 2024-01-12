@@ -1,23 +1,18 @@
 import axios from "axios";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { act } from "react-dom/test-utils";
 
 const Contact = () => {
   const [Email, setEmail] = useState("");
   const [Message, setMessage] = useState("");
   const [Name, setName] = useState("");
   const Post = async () => {
-    await axios
-      .post("http://localhost:8080/contact", {
-        name: Name,
-        email: Email,
-        message: Message,
-      })
-      .then((response) => {
-        console.log(response);
-      });
-    // await axios.get("http://localhost:8080").then((response) => {
-    //   console.log(response);
-    // });
+    const res = await axios.post("http://localhost:8000/contactus/add", {
+      name: Name,
+      email: Email,
+      message: Message,
+    });
+    console.log(res);
   };
 
   const [Time, setTime] = useState(false);
@@ -26,6 +21,9 @@ const Contact = () => {
     Post();
     setTimeout(() => {
       setTime(false);
+      setEmail("");
+      setName("");
+      setMessage("");
     }, 3000);
   };
 
@@ -84,6 +82,7 @@ const Contact = () => {
             </label>
             <input
               type="email"
+              required
               id="email"
               name="email"
               class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -99,6 +98,7 @@ const Contact = () => {
             </label>
             <input
               type="email"
+              required
               id="email"
               name="email"
               class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -115,6 +115,7 @@ const Contact = () => {
             </label>
             <textarea
               id="message"
+              required
               value={Message}
               onChange={(e) => {
                 setMessage(e.target.value);
