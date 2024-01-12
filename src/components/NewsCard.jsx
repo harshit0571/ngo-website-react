@@ -1,6 +1,18 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const NewsCard = () => {
+  const [data, setdata] = useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const getNews = async () => {
+      const res = await axios.get("http://localhost:8000/news");
+      console.log(res.data);
+      setdata(res.data);
+    };
+    getNews();
+  }, []);
   return (
     <section class="text-gray-600 body-font">
       <div class="container px-5 py-24 mx-auto">
@@ -18,87 +30,32 @@ const NewsCard = () => {
             collaborations.
           </p>
         </div>
-        <div class="flex flex-wrap -m-4">
-          <div class="xl:w-1/4 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg">
-              <img
-                class="h-40 rounded w-full object-cover object-center mb-6"
-                src="assets/feature1.png"
-                alt="content"
-              />
-              <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">
-                News
-              </h3>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
-                Banglore Charity
-              </h2>
-              <p class="leading-relaxed text-base">
-                The Annual Charity Conference is an eagerly anticipated event
-                that brings together leaders, advocates, and stakeholders from
-                the non-profit sector.
-              </p>
-            </div>
-          </div>
-          <div class="xl:w-1/4 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg">
-              <img
-                class="h-40 rounded w-full object-cover object-center mb-6"
-                src="assets/feature2.png"
-                alt="content"
-              />
-              <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">
-                News
-              </h3>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
-                Mumbai Charity
-              </h2>
-              <p class="leading-relaxed text-base">
-                The Annual Charity Conference is an eagerly anticipated event
-                that brings together leaders, advocates, and stakeholders from
-                the non-profit sector.
-              </p>
-            </div>
-          </div>
-          <div class="xl:w-1/4 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg">
-              <img
-                class="h-40 rounded w-full object-cover object-center mb-6"
-                src="assets/feature3.png"
-                alt="content"
-              />
-              <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">
-                News
-              </h3>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
-                Delhi Charity
-              </h2>
-              <p class="leading-relaxed text-base">
-                The Annual Charity Conference is an eagerly anticipated event
-                that brings together leaders, advocates, and stakeholders from
-                the non-profit sector.
-              </p>
-            </div>
-          </div>
-          <div class="xl:w-1/4 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg">
-              <img
-                class="h-40 rounded w-full object-cover object-center mb-6"
-                src="assets/about.png"
-                alt="content"
-              />
-              <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">
-                News
-              </h3>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
-                Kolkata News
-              </h2>
-              <p class="leading-relaxed text-base">
-                The Annual Charity Conference is an eagerly anticipated event
-                that brings together leaders, advocates, and stakeholders from
-                the non-profit sector.
-              </p>
-            </div>
-          </div>
+        <div class="flex flex-wrap m-4">
+          {data.map((news) => {
+            return (
+              <div
+                class="xl:w-1/4 md:w-1/2 p-4 cursor-pointer"
+                onClick={() => {
+                  window.location.replace(news.articlelink);
+                }}
+              >
+                <div class="bg-gray-100 p-6 rounded-lg min-h-[400px]">
+                  <img
+                    class="h-40 rounded w-full object-cover object-center mb-6"
+                    src={news.photourl}
+                    alt="content"
+                  />
+                  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">
+                    News
+                  </h3>
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+                    {news.title}
+                  </h2>
+                  <p class="leading-relaxed text-base">{news.description}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
