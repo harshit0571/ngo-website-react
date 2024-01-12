@@ -1,37 +1,53 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
 
-const Stats = () => {
+const Stats = ({ donation, User }) => {
+  const [UserDonations, setUserDonations] = useState([]);
+
+  useEffect(() => {
+    const getDonations = async () => {
+      const res = await axios.get(
+        `http://localhost:8000/donations/${User.session.username}`,
+        {
+          withCredentials: true,
+        }
+      );
+      setUserDonations(res.data);
+      console.log(User.session.username, "donation");
+    };
+    getDonations();
+  });
   return (
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap -m-4 text-center">
-          <div class="p-4 sm:w-1/4 w-1/2">
-            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-              207K
-            </h2>
-            <p class="leading-relaxed">Students</p>
-          </div>
-          <div class="p-4 sm:w-1/4 w-1/2">
-            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-              1.8K
-            </h2>
-            <p class="leading-relaxed">Volunteers</p>
-          </div>
-          <div class="p-4 sm:w-1/4 w-1/2">
-            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-              35
-            </h2>
-            <p class="leading-relaxed">Centres</p>
-          </div>
-          <div class="p-4 sm:w-1/4 w-1/2">
-            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-              4
-            </h2>
-            <p class="leading-relaxed">Cities</p>
-          </div>
-        </div>
+    <div className="w-full p-4">
+      <div className="w-full">
+        <table className="w-full bg-white border border-gray-300">
+          <thead>
+            <tr>
+              <th className="py-2 px-4 border-b">ID</th>
+
+              <th className="py-2 px-4 border-b">Amount</th>
+              <th className="py-2 px-4 border-b">Donation Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {UserDonations.map((donation) => (
+              <tr key={donation.id} className="hover:bg-gray-100">
+                <td className="py-2 px-4 border-b text-black text-center">
+                  {donation.id}
+                </td>
+                <td className="py-2 px-4 border-b text-black text-center">
+                  {donation.Amount}
+                </td>
+                <td className="py-2 px-4 border-b text-center">
+                  {donation.Donation_Date}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </section>
+    </div>
   );
 };
 

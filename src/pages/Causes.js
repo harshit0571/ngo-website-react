@@ -10,7 +10,8 @@ const Causes = () => {
   const [One, setOne] = useState(inactive);
   const [Two, setTwo] = useState(inactive);
   const [Three, setThree] = useState(active);
-  const [User, setUser] = useState();
+  const [User, setUser] = useState({ session: null });
+  const [UserDonations, setUserDonations] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0);
     const checkSession = async () => {
@@ -19,8 +20,12 @@ const Causes = () => {
       });
       setUser(res.data);
       console.log(User, "cause");
+      return User;
     };
+
     checkSession();
+
+    console.log(User, "fdfdfdfdfrjieurireuieru");
   }, []);
 
   return (
@@ -84,23 +89,25 @@ const Causes = () => {
               >
                 Featured Causes
               </button>
-              <button
-                className={
-                  "border-0 py-2 px-6 focus:outline-none hover:bg-white hover:text-red-500 rounded-none text-lg " +
-                  One
-                }
-                onClick={() => {
-                  setOne(active);
-                  setTwo(inactive);
-                  setThree(inactive);
-                }}
-              >
-                Contributions
-              </button>
+              {User.session && (
+                <button
+                  className={
+                    "border-0 py-2 px-6 focus:outline-none hover:bg-white hover:text-red-500 rounded-none text-lg " +
+                    One
+                  }
+                  onClick={() => {
+                    setOne(active);
+                    setTwo(inactive);
+                    setThree(inactive);
+                  }}
+                >
+                  My Donations
+                </button>
+              )}
             </div>
 
             <div className="w-full">
-              {One == active && <Stats />}
+              {One == active && <Stats User={User} />}
               {Two == active && <FeaturedCauses />}
               {Three == active && <DonationCard User={User && User.session} />}
             </div>
