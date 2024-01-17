@@ -10,6 +10,9 @@ const Events = () => {
   }, []);
 
   const [data, setdata] = useState([]);
+  const [Ldata, setLdata] = useState([
+    { title: "", photo_url: "", date: "", address: "", city: "" },
+  ]);
   useEffect(() => {
     const getEvents = async () => {
       const res = await axios.get("http://localhost:8000/events");
@@ -17,6 +20,12 @@ const Events = () => {
       setdata(res.data);
     };
     getEvents();
+    const getEventLatest = async () => {
+      const res = await axios.get("http://localhost:8000/events/latest");
+      console.log(res.data);
+      setLdata(res.data);
+    };
+    getEventLatest();
   }, []);
   return (
     <div className="w-full mb-[120px]">
@@ -34,12 +43,19 @@ const Events = () => {
           scrolling="no"
           src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
         ></iframe>
-        <div className="absolute m-auto left-5 md:top-20 md:left-10">
+        <div className="absolute m-auto left-5 md:top-10 md:left-10">
           <div className="w-[250px] bg-white border-2 border-black  flex flex-col">
-            <img src="assets/event.jpg" className="w-full" />
-            <p className="text-center p-4">
-              ngo event: 20th november <br /> 123, street, xyz state, abc
-              country
+            <img src={Ldata[0].photo_url} className="w-full" />
+            <h3 className="text-center text-red-500 font-bold mt-2">
+              Upcoming Event
+            </h3>
+
+            <p className="text-center p-1">
+              {Ldata[0].title}
+              <br /> {Ldata[0].date.slice(0, 10)} {Ldata[0].date.slice(11, 16)}{" "}
+              <br /> {Ldata[0].address}
+              <br />
+              {Ldata[0].city}
             </p>
           </div>
         </div>

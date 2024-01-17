@@ -1,10 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedCard = ({ raised, goal, title, img }) => {
-  const perc = goal / raised;
+  const nav = useNavigate();
+  const perc = raised > 0 ? Math.round((raised / goal) * 100) : 0;
   const remPerc = 100 - perc;
-  const line1 = "w-[" + perc + "%]";
-  const line2 = "w-[" + remPerc + "%]";
+
+  const line1 = `w-[${perc}%]`;
+  const line2 = `w-[${remPerc}%]`;
+
   console.log(line1 + " " + line2);
   return (
     <div class="featured-card">
@@ -12,8 +16,8 @@ const FeaturedCard = ({ raised, goal, title, img }) => {
         <img src={img} />
         <div class="feature-bar">
           <div class="line">
-            <span class={line1 + " line-1"}></span>
-            <span class={line2 + " line-2 "}></span>
+            <span class={"line-1 " + line1}></span>
+            <span class={"line-2 " + line2}></span>
             <p>{goal / raised}%</p>
           </div>
         </div>
@@ -24,7 +28,14 @@ const FeaturedCard = ({ raised, goal, title, img }) => {
           <p>Goal: ${goal}</p>
         </div>
         <div class="feature-heading">{title}</div>
-        <button>Donate Now</button>
+        <button
+          onClick={() => {
+            nav("/causes");
+          }}
+          className="cursor-pointer"
+        >
+          Donate Now
+        </button>
       </div>
     </div>
   );

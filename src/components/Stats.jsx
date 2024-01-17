@@ -13,7 +13,7 @@ const Stats = ({ donation, User }) => {
           withCredentials: true,
         }
       );
-      setUserDonations(res.data);
+      setUserDonations(res.data.reverse());
       console.log(User.session.username, "donation");
     };
     getDonations();
@@ -40,7 +40,7 @@ const Stats = ({ donation, User }) => {
                   {donation.Amount}
                 </td>
                 <td className="py-2 px-4 border-b text-center">
-                  {donation.Donation_Date}
+                  {donation.Donation_Date.slice(0, 10)}{" "}
                 </td>
               </tr>
             ))}

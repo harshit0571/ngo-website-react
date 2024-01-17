@@ -130,10 +130,6 @@ const Contact = () => {
           >
             Send
           </button>
-          <p class="text-xs text-gray-500 mt-3">
-            Chicharrones blog helvetica normcore iceland tousled brook viral
-            artisan.
-          </p>
         </div>
       </div>
     </section>

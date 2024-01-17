@@ -406,14 +406,14 @@ span {
   margin-left: 10px;
 }
 .line-1 {
-  /* width: 30%; */
+  width: 30%;
   border-start-start-radius: 40px;
   border-end-start-radius: 40px;
   height: 10px;
   background-color: var(--red);
 }
 .line-2 {
-  /* width: 70%; */
+  width: 70%;
   border-start-end-radius: 40px;
   border-end-end-radius: 40px;
   height: 10px;
@@ -455,17 +455,20 @@ span {
   width: 100%;
   background-color: var(--red);
   background-image: url(/public/assets/testimonials.png);
-  height: 500px;
+  height: max-content;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding-left: 50px;
 }
 .testimonials h1 {
   font-size: 2rem;
   color: white;
   -webkit-text-stroke: 2px white;
   font-weight: 900;
+  text-align: center;
   margin-bottom: 30px;
 }
 .dialog {
@@ -480,6 +483,7 @@ span {
   text-align: center;
   position: relative;
   z-index: 3;
+  margin: 0 auto;
 }
 
 .dialog p {
@@ -501,10 +505,6 @@ span {
   font-weight: bolder;
 }
 
-.dialog img {
-  position: absolute;
-  left: 30px;
-}
 .triangle {
   width: 100px;
   height: 100px;
@@ -520,14 +520,14 @@ span {
   margin-top: 10px;
   gap: 15px;
 }
-.test-photos img {
+.iconT img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
   border: 7px solid white;
   transition: 0.5s ease-in-out;
 }
-.test-photos img:hover {
+.iconT img:hover {
   border: 7px solid var(--grey);
 }
 
@@ -1078,7 +1078,7 @@ li {
     transform: rotate(-45deg);
     z-index: -10;
   }
-  .dialog img {
+  .dialog img:first-child {
     position: absolute;
     top: 20%;
     left: 10px;
@@ -1231,7 +1231,7 @@ li {
     margin-top: 20%;
   }
 
-  .dialog img {
+  .dialog img:first-child {
     position: absolute;
     top: 20%;
     left: 1px;
@@ -1242,7 +1242,7 @@ li {
   .display {
     display: none;
   }
-  .test-photos img {
+  .test-photos img:first-child {
     width: 65px;
     height: 65px;
     border-radius: 50%;

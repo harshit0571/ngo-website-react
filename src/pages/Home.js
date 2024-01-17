@@ -2,6 +2,9 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import DonationCard from "../components/DonationCard";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import FeaturedCard from "../components/FeaturedCard";
 
 const Home = () => {
@@ -9,10 +12,18 @@ const Home = () => {
     window.scrollTo(0, 0);
     console.log("fdfddf");
   }, []);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
 
   const [data, setdata] = useState([]);
   const [team, setteam] = useState([]);
-
+  const [help, sethelp] = useState([]);
+  const [reviews, setreviews] = useState([]);
   useEffect(() => {
     const getCauses = async () => {
       const res = await axios.get("http://localhost:8000/causes");
@@ -24,9 +35,21 @@ const Home = () => {
       console.log(res.data);
       setteam(res.data);
     };
+    const getHelp = async () => {
+      const res = await axios.get("http://localhost:8000/help");
+      console.log(res.data);
+      sethelp(res.data);
+    };
+    const getReviews = async () => {
+      const res = await axios.get("http://localhost:8000/reviews/joined");
+      console.log(res.data, "reviews");
+      setreviews(res.data);
+    };
     console.log(team);
     getCauses();
+    getReviews();
     getMembers();
+    getHelp();
   }, []);
 
   const navigate = useNavigate();
@@ -54,58 +77,24 @@ const Home = () => {
           </button>
         </div>
       </section>
-
       <section class="help-section">
         <p>
           HOW COULD <span style={{ color: "var(--red)" }}>YOU HELP ?</span>
         </p>
         <div class="help-container">
-          <div class="cards">
-            <div class="help-img">
-              <img src="assets/help1.png" />
-            </div>
-            <h1>Expertise Skills</h1>
-            <p>
-              With a profound knowledge of cutting-edge technologies, years of
-              hands-on experience.
-            </p>
-          </div>
-
-          <div class="cards">
-            <div class="help-img">
-              <img src="assets/help2.png" />
-            </div>
-            <h1>Give Inspiration</h1>
-            <p>
-              Every great accomplishment begins with a spark of inspiration.
-              It's the driving.
-            </p>
-          </div>
-
-          <div class="cards">
-            <div class="help-img">
-              <img src="assets/help3.png" />
-            </div>
-            <h1>Expertise Skills</h1>
-            <p>
-              Our deep expertise in diverse fields allows us to provide support
-              and insights.
-            </p>
-          </div>
-
-          <div class="cards">
-            <div class="help-img">
-              <img src="assets/help4.png" />
-            </div>
-            <h1>Give Inspiration</h1>
-            <p>
-              In the journey of life, challenges may seem daunting, but they are
-              opportunities in disguise.
-            </p>
-          </div>
+          {help.map((e) => {
+            return (
+              <div class="cards">
+                <div class="help-img">
+                  <img src={e.photourl} />
+                </div>
+                <h1>{e.title}</h1>
+                <p>{e.descr}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
-
       <section class="about-us">
         <div class="about-us-1">
           <img src="assets/about.png" />
@@ -131,7 +120,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       <section class="feature-section">
         <p>
           FEATURED <span style={{ color: "var(--red)" }}>CAUSES</span>
@@ -151,32 +139,59 @@ const Home = () => {
         </div>
       </section>
 
-      <section class="testimonials">
-        <h1>WHAT PEOPLE SAY</h1>
-        <div class="dialog">
-          <img src="assets/quotes.png" />
-          <p style={{ marginBottom: "30px" }}>
-            People say that life is a journey, and along the way, we encounter
-            joys, sorrows, and countless moments that shape our stories. What we
-            say and do, the connections we make, and the impact we leave on the
-            world are all part of this beautiful narrative
-          </p>
+      <Slider className="w-full flex overflow-hidden">
+        {reviews.map((e) => {
+          return (
+            <section class="testimonials">
+              <h1>WHAT TEAM SAYS</h1>
 
-          <div class="triangle"></div>
-          <span>
-            <span style={{ color: "var(--red)" }}>JOHN DOE</span> | NGO
-          </span>
-        </div>
+              <div class="dialog">
+                <img src="assets/quotes.png" />
+                <p style={{ marginBottom: "30px" }}>{e.review_text}</p>
 
-        <div class="test-photos">
-          <img src="assets/test1.png" />
-          <img src="assets/test2.png" />
-          <img src="assets/test3.png" />
-          <img src="assets/test4.png" class="display" />
-          <img src="assets/test5.png" class="display" />
-        </div>
-      </section>
+                <div class="triangle"></div>
+                <div className="w-full 0  flex iconT justify-center items-center p-6">
+                  <img src={e.photoUrl} className="rounded-full" />
+                </div>
+                <div>
+                  <span>
+                    <span style={{ color: "var(--red)" }}>
+                      {e.first_name} {e.last_name}
+                    </span>{" "}
+                    | {e.role}
+                  </span>
+                </div>
+              </div>
+            </section>
+          );
+        })}
+        {/* <section class="testimonials">
+          <h1>WHAT PEOPLE SAY</h1>
 
+          <div class="dialog">
+            <img src="assets/quotes.png" />
+            <p style={{ marginBottom: "30px" }}>
+              People say that life is a journey, and along the way, we encounter
+              joys, sorrows, and countless moments that shape our stories. What
+              we say and do, the connections we make, and the impact we leave on
+              the world are all part of this beautiful narrative
+            </p>
+
+            <div class="triangle"></div>
+            <span>
+              <span style={{ color: "var(--red)" }}>JOHN DOE</span> | NGO
+            </span>
+          </div>
+
+          <div class="test-photos">
+            <img src="assets/test1.png" />
+            <img src="assets/test2.png" />
+            <img src="assets/test3.png" />
+            <img src="assets/test4.png" class="display" />
+            <img src="assets/test5.png" class="display" />
+          </div>
+        </section> */}
+      </Slider>
       <section class="volunteer">
         <p class="title">
           OUR <span style={{ color: "var(--red)" }}>TEAM</span>
